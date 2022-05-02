@@ -1,13 +1,13 @@
 {
-  "name": "Bookmarks +",
-  "description": "Edit, organize, and share your bookmarks without any hassle.",
+  "name": "Bundlr",
+  "description": "Bundlr is a tab management application for Chrome. It allows you to create and manage bundls, open then at any time, and then share them with other people.",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
-    "bookmarks"
+    "bookmarks","tabs","storage"
   ],
   "action": {
-    "default_title": "Bookmarks +",
+    "default_title": "Bundlr",
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
