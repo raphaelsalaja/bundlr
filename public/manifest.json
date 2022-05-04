@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "My Extension",
+  "description": "This extension is a starting point to create a real Chrome extension",
+  "version": "0.0.1",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "icons": {
+    "16": "logo192.png",
+    "48": "logo512.png"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-GgRxr...'; object-src 'self'",
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs",
+    "contextMenus"
+  ]
+}
