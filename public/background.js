@@ -1,14 +1,27 @@
-// get all the tabs in the current window and print them out
-function getTabs()
+
+var tabs = [];
+function GetAllTabs()
 {
-  chrome.tabs.query({ currentWindow: true }, function (tabs)
+  chrome.tabs.query({ currentWindow: true }, function (openedTabs)
   {
+    openedTabs.forEach(openedTabs =>
+    {
+      tabs.push(
+        {
+          position: openedTabs.index,
+          title: openedTabs.title,
+          url: openedTabs.url,
+          icon: openedTabs.icon,
+        }
+      );
+    });
+    console.group('CURRENT TAB ARRAY');
     console.log(tabs);
-  }
-  );
+    console.groupEnd('CURRENT TAB ARRAY');
+  });
 }
 
-// create alarm for watchdog and fresh on installed/updated, and start fetch data
-chrome.runtime.onInstalled.addListener(() => {
-  getTabs();
+chrome.runtime.onInstalled.addListener(() =>
+{
+  GetAllTabs();
 });

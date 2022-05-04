@@ -2,22 +2,14 @@ import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './App.css';
 
-// make an array of the currently opened tabs
-const tabs = [];
-chrome.tabs.query({ currentWindow: true }, function (tabs)
-{
-  tabs.forEach(tab =>
-  {
-    tabs.push(tab);
-  }
-  );
-}
-);
 
-function App() {
+
+function App()
+{
   const [tabs, updatetabs] = useState(finalSpacetabs);
 
-  function handleOnDragEnd(result) {
+  function handleOnDragEnd(result)
+  {
     if (!result.destination) return;
 
     const items = Array.from(tabs);
@@ -35,7 +27,8 @@ function App() {
           <Droppable droppableId="tabs">
             {(provided) => (
               <ul className="tabs" {...provided.droppableProps} ref={provided.innerRef}>
-                {tabs.map(({id, name, thumb}, index) => {
+                {tabs.map(({ id, name, thumb }, index) =>
+                {
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
@@ -44,7 +37,7 @@ function App() {
                             <img src={thumb} alt={`${name} Thumb`} />
                           </div>
                           <p>
-                            { name }
+                            {name}
                           </p>
                         </li>
                       )}
@@ -58,7 +51,8 @@ function App() {
           <Droppable droppableId="tabs">
             {(provided) => (
               <ul className="tabs" {...provided.droppableProps} ref={provided.innerRef}>
-                {tabs.map(({id, name, thumb}, index) => {
+                {tabs.map(({ id, name, thumb }, index) =>
+                {
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
@@ -67,7 +61,7 @@ function App() {
                             <img src={thumb} alt={`${name} Thumb`} />
                           </div>
                           <p>
-                            { name }
+                            {name}
                           </p>
                         </li>
                       )}
@@ -81,7 +75,8 @@ function App() {
           <Droppable droppableId="tabs">
             {(provided) => (
               <ul className="tabs" {...provided.droppableProps} ref={provided.innerRef}>
-                {tabs.map(({id, name, thumb}, index) => {
+                {tabs.map(({ id, name, thumb }, index) =>
+                {
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
@@ -90,7 +85,7 @@ function App() {
                             <img src={thumb} alt={`${name} Thumb`} />
                           </div>
                           <p>
-                            { name }
+                            {name}
                           </p>
                         </li>
                       )}
