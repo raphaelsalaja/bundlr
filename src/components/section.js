@@ -1,4 +1,4 @@
-import {Box, Flex, Icon, Heading, IconButton, Text, useTheme, HStack} from '@chakra-ui/react'
+import {Box, Flex, Heading, Text, useTheme, HStack} from '@chakra-ui/react'
 import {ChakraNestedProvider} from './chakraNestedProvider'
 import {appInfo} from '../data/data'
 
@@ -8,22 +8,16 @@ export const Section = ({children, heading, description, theme, ...rest}) => {
 	const id = 'section-id-' + Date.now()
 	return (
 		<Flex height='fit-content' width='fit-content' display='flex' align-items='center' justify-content='center'>
-			<Box id={id} boxShadow={'2xl'} bg='secondary' borderRadius={8} w='fit-content' {...rest} as='section'>
+			<Box id={id} boxShadow={'2xl'} bg='secondary' borderRadius={24} w='fit-content' {...rest} as='section'>
 				<ChakraNestedProvider theme={sectionTheme} cssVarsRoot={'#' + id}>
 					<Flex direction='column' alignItems='left' justifyContent='center' p={(0, 0, 0, 8)}>
 						<HStack>
-							<Flex></Flex>
-
-							<Flex direction='column' alignItems='left'>
-								{appInfo.map((app) => (
-									<Heading as='h1' fontSize={16} key={app}>
-										{app.name}
-									</Heading>
-								))}
-								{appInfo.map((app) => (
+							{appInfo.map((app) => (
+								<Flex direction='row' alignItems='center' gap={1}>
+									<Text key={app}>{app.name}</Text>
 									<Text key={app}>{app.version}</Text>
-								))}
-							</Flex>
+								</Flex>
+							))}
 						</HStack>
 					</Flex>
 					{children}

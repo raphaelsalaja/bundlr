@@ -2,9 +2,9 @@ import React from 'react'
 import {FaGithub, FaTwitter} from 'react-icons/fa'
 
 const siteConfig = {
-	copyright: `Copyright © ${new Date().getFullYear()} Muhammad Ahmad. All Rights Reserved.`,
+	copyright: `Copyright © ${new Date().getFullYear()} raf_ All Rights Reserved.`,
 	author: {
-		name: 'Muhammad Ahmad',
+		name: 'raf_',
 		accounts: [
 			{
 				url: 'https://github.com/raf-underscore',
